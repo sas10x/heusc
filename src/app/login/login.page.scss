@@ -23,8 +23,8 @@ ion-toolbar {
       }
   
       img {
-        width: 125px;
-        height: 125px;
+        max-height: 100%;
+        width: auto;
         border-radius: 50%;
         border: 8px solid #ffffff;
       }
@@ -71,8 +71,8 @@ ion-toolbar {
     position: absolute;
     left: 0;
     right: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 65%;
+    transform: translateY(-65%);
   }
   
   #container strong {
@@ -97,4 +97,7 @@ ion-toolbar {
   }
   .krristann-lns {
     color:  var(--ion-color-primary-lns);
+  }
+  .imahe {
+    height: 20vh;
   }

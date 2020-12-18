@@ -1,5 +1,8 @@
 <ion-header class="ion-no-border">
   <ion-toolbar>
+    <ion-buttons slot="end" *ngIf="message">
+      <ion-button routerLink="/privacy">Privacy</ion-button>
+    </ion-buttons>
     <ion-buttons slot="end" *ngIf="!message">
       <ion-button routerLink="/signup">Register</ion-button>
     </ion-buttons>
@@ -18,7 +21,7 @@
   <div id="container" *ngIf="message">
     <strong>Your QR Code</strong>
     <p>Right after temperature checking</p>
-    <p>Scan this on entering <strong class="krristann">CHBC</strong> stores or <strong class="krristann-lns">LNS</strong> store. Thanks.</p>
+    <p>Scan this upon entering <strong class="krristann">CHBC</strong> stores or <strong class="krristann-lns">LNS</strong> store. Thank you.</p>
     <ngx-qrcode 
       [elementType]="elementType" 
       [value]="message"
