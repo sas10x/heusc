@@ -11,6 +11,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
 import { IonicStorageModule } from '@ionic/storage';
 import { HttpClientModule } from '@angular/common/http';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -22,7 +24,8 @@ import { HttpClientModule } from '@angular/common/http';
     IonicStorageModule.forRoot(), 
     NgxQRCodeModule,
     HttpClientModule,
-    AppRoutingModule],
+    AppRoutingModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })],
   providers: [
     StatusBar,
     SplashScreen,
