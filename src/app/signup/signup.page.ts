@@ -19,7 +19,7 @@ export class SignupPage implements OnInit {
   profileForm = this.fb.group({
     firstName: ['', Validators.required],
     lastName: ['', Validators.required],
-    email: ['', Validators.required],
+    mobile: ['', Validators.required],
     sex: ['', Validators.required],
     age: ['', Validators.required],
     city: ['', Validators.required],

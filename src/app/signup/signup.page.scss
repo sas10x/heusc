@@ -24,6 +24,7 @@ ion-toolbar {
       padding-right: 30px;
   
       ion-button {
+        border: none!important;
         margin-top: 35px;
         height: 48px;
         font-size: 18px;
@@ -61,9 +62,15 @@ ion-toolbar {
       text-decoration: none;
     }
   }
+  .gender {
+    height: 200px!important;
+  }
   .my-custom-class {
     --background: #222;
     --spinner-color: #fff;
   
     color: #fff;
   }
+  // ion-list {
+  //   margin-bottom: 15px;
+  // }

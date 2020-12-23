@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content>
-  <h1>Register Once</h1>
+  <h1>Register</h1>
 
   <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
     <ion-item class="ion-margin-bottom">
@@ -15,21 +15,44 @@
       <ion-input type="text" formControlName="lastName" placeholder="LastName" maxlength="50" required></ion-input>
     </ion-item>
     <ion-item class="ion-margin-bottom">
-      <ion-input type="email" formControlName="email" placeholder="Email" maxlength="50" required></ion-input>
+      <ion-label>+63</ion-label>
+      <ion-input type="number" formControlName="mobile" placeholder="Mobile Number" maxlength="50" required></ion-input>
     </ion-item>
-    <ion-item>
-      <ion-label>Sex</ion-label>
-      <ion-select formControlName="sex" placeholder="Select One" required>
-        <ion-select-option value="f">Female</ion-select-option>
-        <ion-select-option value="m">Male</ion-select-option>
-      </ion-select>
-    </ion-item>
+    <ion-list class="ion-margin-bottom">
+      <ion-radio-group formControlName="sex">
+        <ion-list-header>
+          <ion-label>Gender</ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Female</ion-label>
+          <ion-radio slot="start" value="f"></ion-radio>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Male</ion-label>
+          <ion-radio slot="start" value="m"></ion-radio>
+        </ion-item>
+
+      </ion-radio-group>
+    </ion-list>
     <ion-item class="ion-margin-bottom">
       <ion-input type="number" formControlName="age" placeholder="Age" maxlength=2 required></ion-input>
     </ion-item>
-    <ion-item class="ion-margin-bottom">
-      <ion-input type="text" formControlName="city" placeholder="City" maxlength="50" required></ion-input>
+    <ion-item>
+      <ion-label>City</ion-label>
+      <ion-select interface="popover" formControlName="city">
+        <ion-select-option value="mandaue">Mandaue</ion-select-option>
+        <ion-select-option value="cebu">Cebu City</ion-select-option>
+        <ion-select-option value="talisay">Talisay</ion-select-option>
+        <ion-select-option value="lapu-lapu">Lapu-lapu</ion-select-option>
+        <ion-select-option value="minglanilla">Minglanilla</ion-select-option>
+        <ion-select-option value="consolacion">Consolacion</ion-select-option>
+        <ion-select-option value="">Other</ion-select-option>
+      </ion-select>
     </ion-item>
+    <!-- <ion-item class="ion-margin-bottom">
+      <ion-input type="text" formControlName="city" placeholder="City" maxlength="50" required></ion-input>
+    </ion-item> -->
     <ion-item class="ion-margin-bottom">
       <ion-input type="text" formControlName="barangay" placeholder="Barangay" maxlength="50" required></ion-input>
     </ion-item>
