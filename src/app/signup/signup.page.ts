@@ -23,13 +23,14 @@ export class SignupPage implements OnInit {
     sex: ['', Validators.required],
     age: ['', Validators.required],
     city: ['', Validators.required],
-    barangay: ['', Validators.required],
+    barangay: ['', ],
   });
   loading = false;
   elementType = 'url';
   value:string;
   message:string;
   error:any;
+  others = true;
 
   subscribe:any;
   constructor(private platform: Platform, private qrcodeService: QrcodeService, private fb: FormBuilder, private storage: Storage, private router: Router, private routerOutlet: IonRouterOutlet) {
@@ -82,5 +83,17 @@ export class SignupPage implements OnInit {
   getTodo() {
     return from(this.storage.get('name'))
       .pipe(map(response => response));
+  }
+  valueChanged() {
+    if (this.profileForm.value.city == "") 
+    {
+      this.profileForm.value.city = "";
+      this.others = true;
+      console.log('KRISTAN');
+    }
+    else {
+      console.log(this.profileForm.value.city);
+      this.others = false;
+    }
   }
 }

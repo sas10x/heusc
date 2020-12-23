@@ -40,7 +40,7 @@
     </ion-item>
     <ion-item>
       <ion-label>City</ion-label>
-      <ion-select interface="popover" formControlName="city">
+      <ion-select interface="popover" formControlName="city" (ionChange)="valueChanged()" (onclick)="valueChanged()">
         <ion-select-option value="mandaue">Mandaue</ion-select-option>
         <ion-select-option value="cebu">Cebu City</ion-select-option>
         <ion-select-option value="talisay">Talisay</ion-select-option>
@@ -50,11 +50,12 @@
         <ion-select-option value="">Other</ion-select-option>
       </ion-select>
     </ion-item>
-    <!-- <ion-item class="ion-margin-bottom">
-      <ion-input type="text" formControlName="city" placeholder="City" maxlength="50" required></ion-input>
-    </ion-item> -->
+    <ion-item class="ion-margin-bottom" *ngIf="others">
+      <ion-input type="text" formControlName="city" placeholder="Specify City" maxlength="50" required></ion-input>
+    </ion-item>
+    <ion-label>Optional:</ion-label>
     <ion-item class="ion-margin-bottom">
-      <ion-input type="text" formControlName="barangay" placeholder="Barangay" maxlength="50" required></ion-input>
+      <ion-input type="text" formControlName="barangay" placeholder="Barangay" maxlength="50"></ion-input>
     </ion-item>
     <ion-button type="submit" [disabled]="!profileForm.valid" expand="block" shape="round">
       Register <ion-spinner *ngIf="loading" name="circles"></ion-spinner>
